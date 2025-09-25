@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Minesweeper </title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="menu_style.css"> 
+
+</head>
+<body>
+   
+    <div class="navigation_bar">
+
+        <!-- home button (go to main menu)-->
+        <button class="nav_button" onclick="window.location.href='index.php';">Home</button>
+
+        <!-- logout button -->
+        <form action="logout.php" method="post">
+            <button class="nav_button" type="submit">Logout</button>
+        </form>
+
+    </div>
+
+    <h1>Play Minesweeper</h1>
+    <p> Pick a mode to start<p>
+
+    <div class="main_buttons">
+        <button class="mode_button" type="submit" onclick="window.location.href='game.html';">EASY MODE</button>
+        <button class="mode_button" type="submit" onclick="window.location.href='game2.html';">NORMAL MODE</button>
+        <button class="mode_button" type="submit" onclick="window.location.href='game3.html';">HARD MODE</button>
+    </div>
+
+</body>
+</html>

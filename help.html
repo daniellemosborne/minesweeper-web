@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Contact Page</title>
+        <!-- add CSS file -->
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="menu_style.css">
+    </head>
+
+    <body>
+
+        <div class="navigation_bar">
+
+            <!-- home button (go to main menu)-->
+            <button class="nav_button" onclick="window.location.href='index.php';">Home</button>
+    
+            <!-- logout button -->
+            <form action="logout.php" method="post">
+                <button class="nav_button" type="submit">Logout</button>
+            </form>
+    
+        </div>
+
+        <div class="content_container">
+
+            <div class="how_to">
+        
+                <h2 class="how_to_header">How To Play Minesweeper</h2>
+
+                <p class="how_to_content" style="font-size:14pt;">
+                    Mines: 🐶 <br>
+                    Flags: 🐾 <br>
+                </p>
+        
+                <h2 class="how_to_header">Objective</h2>
+                <p class="how_to_content">
+                    Each square can either contain a mine or be empty. 
+                    Avoid clicking on a square with a mine—this will end the game!
+                </p>
+        
+                <h3 class="how_to_subhead">Starting the Game</h3>
+                <p class="how_to_content">
+                    The first click is always safe (no mines). 
+                    Click on a square to reveal what’s beneath it.
+                </p>
+        
+                <h3 class="how_to_subhead">Numbers on the Grid</h3>
+                <p class="how_to_content">
+                    If you click an empty square, you may see a number.
+                    This number indicates how many mines are in the squares surrounding it.
+                    Use these numbers to deduce where the mines are hidden!
+                </p>
+        
+                <h3 class="how_to_subhead">Marking Mines</h3>
+                <p class="how_to_content">
+                    Right-click on a square to mark it with a flag if you think it contains a mine.
+                    This helps you keep track of suspected mine locations.
+                </p>
+        
+                <h3 class="how_to_subhead">Clearing Nearby Squares</h3>
+                <p class="how_to_content">
+                    If a number is revealed and you’ve flagged the correct number of surrounding mines, 
+                    you can clear the remaining squares around it by clicking the number again.
+                    Caution: If you’ve flagged incorrectly, you may trigger a mine!
+                </p>
+        
+            </div>
+        
+            <div class="game_end">
+        
+                <h2 class="game_end_header">Game End</h2>
+        
+                <h3 class="game_end_subhead">You Win By:</h3>
+                <p class="game_end_content">
+                    - Revealing all non-mine squares<br>
+                    - Flagging all mines<br>
+                </p>
+        
+                <h3 class="game_end_subhead">You Lose By:</h3>
+                <p class="game_end_content">
+                    Uncovering a mine :(
+                </p>
+        
+            </div>
+        
+        </div>
+        
+
+    </body>
+
+</html>

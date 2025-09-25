@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login</title>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="account.css">
+    </head>
+
+    <body>
+
+        <div class="login_form">
+
+            <h1 class="login_heading">Minesweeper</h1>
+
+            <h3 class="login_subheading">Login</h3>
+
+            <form class="input_fields" action="login.php" method="post">
+                <!-- enter email address -->
+                <input type="email" id="email" name="email" placeholder="Email address" required><br>
+        
+                <!-- enter password -->
+                <input type="password" id="password" name="password" placeholder="Enter password" required><br>
+        
+                <!-- login button -->
+                <button type="submit" class="login_button">Login</button><br>
+
+                <!-- no account -->
+                <p>Don't have an account?<button class="createaccount" onclick="window.location.href='signup.html';">Sign up</button></p>
+
+            </form>
+
+        </div>
+
+    </body>
+
+</html>

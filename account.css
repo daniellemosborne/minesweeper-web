@@ -1,0 +1,120 @@
+/* login and create account style */
+html {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+body, html {
+    background-color: #13284c;
+    font-family: 'Press Start 2P', monospace; 
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ------------------- LOGIN PAGE, SIGN UP PAGE ------------------- */
+
+.login_form, .signup_form {
+    width: 100%;
+    max-width: 400px; 
+    text-align: center; 
+    background-color: rgba(0, 91, 181, 0.9); 
+    border: 2px solid #db0032; 
+    padding: 30px; 
+    box-shadow: 4px 4px 0 #000; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    gap: 20px; 
+}
+
+.login_heading, .login_subheading, .signup_heading {
+    text-transform: uppercase; 
+    margin: 0; 
+}
+
+.login_heading {
+    margin-bottom: 20px;
+    font-size: 20pt;
+    color: white;
+    text-shadow: 3px 3px 0 #db0032;
+}
+
+.signup_heading {
+    margin-bottom: 20px;
+    font-size: 20pt;
+    color: white;
+    text-shadow: 3px 3px 0 #db0032;
+}
+
+.login_subheading {
+    color: white;
+    font-size: 16pt;
+}
+
+.input_fields input {
+    width: 90%; 
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid #db0032; 
+    background-color: white;
+    margin: 10px 0; 
+}
+
+.login_button, .createaccount_btn {
+    font-family: 'Press Start 2P', monospace;
+    background-color: #db0032; 
+    border: 2px solid #fff;
+    color: #fff; 
+    padding: 15px 0; 
+    cursor: pointer; 
+    font-size: 12px;
+    width: 60%;
+    text-align: center; 
+    text-transform: uppercase; 
+    box-shadow: 4px 4px 0 #000; 
+    transition: transform 0.2s, box-shadow 0.2s; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.login_button:hover, .createaccount_btn:hover {
+    transform: translate(-2px, -2px); 
+    box-shadow: 0 0 0 #000; 
+    background-color: #fff; 
+    color: #db0032;
+}
+
+.createaccount {
+    font-family: 'Press Start 2P', monospace;
+    border: none;
+    background: none;
+    color: #db0032; 
+    text-decoration: none; 
+    font-size: 12px;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 10px;
+}
+
+.createaccount:hover {
+    color: white; 
+    text-decoration: none; 
+}
+
+input[type="email"], input[type="password"] {
+    margin-bottom: 15px; 
+}
+
+p {
+    margin: 10px 0 0;
+    font-size: 12px;
+    color: white;
+}
+
+
+

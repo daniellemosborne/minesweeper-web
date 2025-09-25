@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="account.css">
+    </head>
+
+    <body>
+
+        <div class="signup_form">
+
+            <h1 class="signup_heading">Create Account</h1>
+        
+            <form class ="input_fields" action="signup.php" method="post" name="signupForm">
+                <!-- enter first name -->
+                <input type="text" id="fname" name="fname" placeholder="First name" required><br>
+        
+                <!-- enter last name -->
+                <input type="text" id="lname" name="lname" placeholder="Last name" required><br>
+        
+                <!-- enter email address -->
+                <input type="text" id="email" name="email" placeholder="Email address" required><br>
+        
+                <!-- create password -->
+                <input type="password" id="create-password" name="password" placeholder="Create password" required><br>
+        
+                <!-- confirm password-->
+                <input type="password" id="cfrmpassword" name="cfrmpassword" placeholder="Confirm password" required><br>
+
+                <p>Have an account?<button class="createaccount" onclick="window.location.href='login.html';">Login</button></p>
+
+                <button class="createaccount_btn">Sign up</button> 
+                
+            </form>
+        
+        </div>
+
+    </body>
+
+</html>
+
+   

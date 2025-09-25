@@ -1,0 +1,542 @@
+/* stylesheet for main menu, leaderboard, contact, and help page */
+html {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+body, html {
+    background-color: #13284c;
+    font-family: 'Press Start 2P', monospace; 
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* ------------------- NAV BAR ------------------- */
+
+.navigation_bar {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 97%; 
+    background-color: rgba(19, 40, 76, 0); 
+    padding: 15px; 
+    z-index: 1000; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.nav_button {
+    background-color: #13284c; 
+    border: none; 
+    color: white; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+    font-size: 16px;
+}
+
+.nav_button:hover {
+    color: rgb(231, 231, 231); 
+}
+
+/* ------------------- MENU BUTTONS ------------------- */
+
+.main_buttons {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 15px; 
+    width: 100%; 
+    margin-top: 20px; 
+}
+
+.menu_button, .mode_button, #restartBtn {
+    font-family: 'Press Start 2P', monospace;
+    background-color: #db0032; 
+    border: 2px solid #fff; 
+    color: #fff; 
+    padding: 15px 0; 
+    cursor: pointer; 
+    font-size: 14px; 
+    width: 200px; 
+    text-align: center; 
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0 #000; 
+    transition: transform 0.2s, box-shadow 0.2s; 
+}
+
+button#restartBtn {
+    align-items: center;
+    margin-top: 20px; 
+}
+
+button#restartBtn:hover {
+    background-color: #fff; 
+    color: #13284c;  
+    box-shadow: 2px 2px 0 #000;   
+}
+
+.sort {
+    font-family: 'Press Start 2P', monospace;
+    background-color: #db0032; 
+    border: 2px solid #fff; 
+    color: #fff; 
+    padding: 10px 0; 
+    cursor: pointer; 
+    font-size: 10px; 
+    width: 100px; 
+    text-align: center; 
+    text-transform: uppercase; 
+    box-shadow: 4px 4px 0 #000; 
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.sort:hover {
+    background-color: #fff; 
+    color: #13284c; 
+    transform: translate(-2px, -2px); 
+    box-shadow: 2px 2px 0 #000; 
+}
+
+.menu_button:hover, .mode_button:hover {
+    background-color: #fff; 
+    color: #13284c; 
+    transform: translate(-2px, -2px); 
+    box-shadow: 2px 2px 0 #000;   
+}
+
+/* ------------------- HEADINGS ------------------- */
+
+h1, h2, h3 {
+    text-align: center; 
+    color: white;
+    text-shadow: 3px 3px 0 #db0032; 
+}
+
+p {
+    text-align: center; 
+    font-size: 12pt;
+    color: white;
+}
+
+
+/* ------------------- GAME ------------------- */
+
+.gamecontainer {
+    font-family: 'Helvetica', sans-serif;
+    color: white;
+    flex-direction: column; 
+    text-align: center;
+    width: 100%; 
+}
+
+.game-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    padding-top: 40px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    width: 60%; 
+}
+
+.gameGrid {
+    display: grid;
+    font-family: 'Helvetica', sans-serif;
+    grid-template-rows: repeat(10, 40px);
+    grid-template-columns: repeat(10, 40px);
+    margin: 20px auto;
+    height: 400px;
+    width: 400px;
+    background-color: #005bb5;
+    border: 10px solid #db0032;
+    margin-bottom: 10px;
+}
+
+.gameGridEasy {
+    display: grid;
+    display: flex;
+    font-family: 'Helvetica', sans-serif;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(5, 1fr); 
+    grid-template-rows: repeat(5, 1fr); 
+    margin: 20px auto;
+    height: 200px;
+    width: 200px;
+    background-color: #005bb5;
+    border: 10px solid #db0032;
+}
+
+.gameGridHard {
+    display: grid;
+    display: flex;
+    font-family: 'Helvetica', sans-serif;
+    flex-wrap: wrap;
+    margin: 20px auto;
+    justify-content: center; 
+    align-items: center;
+    grid-template-columns: repeat(15, 1fr); 
+    grid-template-rows: repeat(15, 1fr); 
+    width: 600px; 
+    height: 600px;
+    background-color: #005bb5;
+    border: 10px solid #db0032;
+}
+
+div {
+   font-size: 25px;
+   text-align: center;
+}
+
+.safe, .bomb {
+    width: 40px;
+    height: 40px;
+    border: 5px solid;
+    border-color: #f5f3eb #bab7ab #bab7a9 #fff9db;
+    box-sizing: border-box;
+}
+
+.checked {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #9c998d;
+    box-sizing: border-box;
+}
+
+.one {
+    color: #e76346;
+}
+
+.two {
+    color: #4199d3;
+}
+
+.three {
+    color: #57da59;
+}
+
+.four {
+    color: #bb41d3;
+}
+
+.gamecontrols {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
+    gap: 10px; 
+    margin-bottom: 20px;
+}
+
+.gamecontrols button {
+    margin-top: 10pt;
+    padding: 10px 20px;
+    font-size: 14pt;
+    cursor: pointer;
+    border: none;
+}
+
+#timer {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #000;
+}
+
+#startBtn:hover {
+    background-color: #45a049;
+}
+
+div#result {
+    margin-top: 15pt;
+    margin-bottom: 15pt;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 14pt;
+    color: white;
+    text-shadow: 3px 3px 0 #db0032; 
+
+}
+
+div#dogs {
+    color: #ffffff; 
+    margin-top: 10pt;
+    margin-bottom: 10pt;
+}
+
+span#timer {
+    color: white; 
+    font-size: 14pt;
+}
+
+/* --------- GAME OPTIONS ------------ */
+
+body.light-theme {
+    background-color: #add8e6; /* Light gray background */
+    color: #333; /* Dark text color */
+    background-image: none; /* Remove background image if needed */
+}
+
+body.dark-theme {
+    background-color: #13284c; /* Dark background */
+    color: #f9f9f9; /* Light text color */
+    background-image: none; /* Optional: Add/remove background image */
+}
+
+.gameGridEasy.default {
+    background-color: #005bb5;
+}
+
+.gameGridEasy.lightblue {
+    background-color: #add8e6;
+}
+
+.gameGridEasy.green {
+    background-color: #90ee90;
+}
+
+.gameGrid.default {
+    background-color: #005bb5;
+}
+
+.gameGrid.lightblue {
+    background-color: #add8e6;
+}
+
+.gameGrid.green {
+    background-color: #90ee90;
+}
+
+.gameGridHard.default {
+    background-color: #005bb5;
+}
+
+.gameGridHard.lightblue {
+    background-color: #add8e6;
+}
+
+.gameGridHard.green {
+    background-color: #90ee90;
+}
+
+.settings3 {
+    margin-top: 20px; 
+    margin-left: 10px;
+    padding: 20px;
+    background-color: #005bb5; 
+    border: 2px solid #db0032;
+    font-size: 10px;
+    text-align: left;
+    width: 400px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.settings {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #005bb5; 
+    border: 2px solid #db0032;
+    font-size: 10px;
+    text-align: left;
+    margin-left: 10px;
+    width: 200px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.settings h2 {
+    font-size: 12pt;
+    margin-bottom: 10px;
+    padding: 5pt;
+}
+
+.settings .color-options,
+.settings .theme-options {
+    margin-bottom: 10px;
+}
+
+.settings label {
+    font-size: 8pt;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.settings select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.boardColor, .theme {
+    font-size: 10pt;
+}
+
+/* ------------------- LEADERBOARD ------------------- */
+
+table {
+    width: 85%; 
+    margin: 20px auto; 
+    border-collapse: collapse; 
+    background-color: #005bb5; 
+    color: white; 
+    box-shadow: 4px 4px 0 #000;
+}
+
+table th, table td {
+    border: 2px solid #db0032; 
+    padding: 10px; 
+    text-align: center; 
+    font-size: 12px; 
+}
+
+table th {
+    background-color: #db0032; 
+    color: white; 
+    text-transform: uppercase; 
+}
+
+table tr:nth-child(even) {
+    background-color: #004a9b; 
+}
+
+table tr:hover {
+    background-color: #266cb2; 
+    color: #fff; 
+}
+
+form {
+    margin-top: 20px;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 12pt; 
+    font-family: 'Press Start 2P', monospace; 
+    font-size: 14px; 
+    color: white; 
+}
+
+form label {
+    color: white; 
+    margin-right: 2px; 
+    text-transform: uppercase; 
+}
+
+form select {
+    background-color: #005bb5; 
+    border: 2px solid #db0032;
+    color: white; 
+    padding: 5px 10px; 
+    font-size: 14px; 
+    font-family: 'Press Start 2P', monospace; 
+    text-transform: uppercase; 
+    cursor: pointer; 
+    border-radius: 5px; 
+}
+
+/* ------------------- CONTACT PAGE ------------------- */
+
+.contact_info {
+    text-align: center; 
+    margin-top: 100px; 
+    color: white;
+    font-family: 'Press Start 2P', monospace; 
+    margin-bottom: 60px;
+}
+
+h3.authors {
+    color: #004a9b; 
+    margin-bottom: 20px;
+    text-transform: uppercase; 
+    font-family: 'Press Start 2P', monospace; 
+    margin-bottom: 40px;
+}
+
+.author1, .author2 {
+    color: #005bb5;
+    margin-bottom: 40px;
+}
+
+.author1:hover, .author2:hover {
+    color: white; 
+}
+
+.author1 a, .author2 a {
+    color: white; 
+    text-decoration: none; 
+    font-size: 12px; 
+    margin-bottom: 10px;
+}
+
+.author1 a:hover, .author2 a:hover {
+    color: #004a9b;
+    text-decoration: none; 
+    font-size: 12px; 
+}
+
+.author1 p:first-child, .author2 p:first-child {
+    font-size: 16px; 
+    font-weight: bold; 
+    margin-bottom: 10px; 
+}
+
+/* ------------------- HELP PAGE ------------------- */
+
+.content_container {
+    max-width: 800px; 
+    margin: 100px auto; 
+    padding: 20px; 
+    background-color: rgba(0, 91, 181, 0.9); 
+    border: 2px solid #db0032;
+    border-radius: 10px; 
+    box-shadow: 4px 4px 0 #000; 
+    min-height: 70vh; 
+    max-height: 70vh; 
+    overflow-y: auto; 
+    display: flex; 
+    flex-direction: column;
+}
+
+.how_to_header, .game_end_header {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #db0032; 
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0 #000; 
+}
+
+.how_to_subhead, .game_end_subhead {
+    font-size: 16px;
+    color: white; 
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.how_to_content, .game_end_content {
+    font-size: 14px;
+    line-height: 1.8; 
+    margin: 10px 0;
+    color: white;
+    text-indent: 10px; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

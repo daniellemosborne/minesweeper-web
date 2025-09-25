@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="menu_style.css">
+</head>
+<body>
+    
+    <div class="navigation_bar">
+
+        <!-- home button (go to main menu)-->
+        <button class="nav_button" onclick="window.location.href='index.php';">Home</button>
+
+        <!-- logout button -->
+        <form action="logout.php" method="post">
+            <button class="nav_button" type="submit">Logout</button>
+        </form>
+
+    </div>
+
+    <div class="game-layout">
+        <!-- Game Grid Section -->
+        <div class="gamecontainer">
+            <div class="gameGrid"></div>
+            <div id="dogs"> Dogs left: <span id="flagsRemaining"></span> </div>
+            <div id="result"></div>
+            <div class="gamecontrols">
+                <span id="timer">Time: 0s</span>
+            </div>
+        </div>
+
+        <!-- Settings Section -->
+        <div class="settings">
+            <h2>Customize Your Game</h2>
+            <div class="color-options">
+                <label class="boardColor" for="boardColor">Board Color:</label>
+                <select id="boardColor">
+                    <option value="default">Default</option>
+                    <option value="lightblue">Light Blue</option>
+                    <option value="green">Green</option>
+                </select>
+            </div>
+            <div class="theme-options">
+                <label class="theme" for="theme">Game Theme:</label>
+                <select id="theme">
+                    <option value="light">Light Theme</option>
+                    <option value="dark">Dark Theme</option>
+                </select>
+            </div>
+            <button id="restartBtn" onclick="window.location.href='game2.html';" style="display:none;">Restart Game</button>
+        </div>
+
+    </div>
+
+    <script src="med.js"></script>
+</body>
+</html>
