@@ -50,10 +50,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['user_id'] = $userId;
     $_SESSION['user'] = $u['email']; 
 
-    // account created successfully
-    echo "<script>alert('Account created successfully!'); window.location.href='index.php';</script>";
+    header("Location: index.php");
+    exit;
   }
 
-  echo "<script>alert('Account created but could not log you in. Please login.'); window.location.href='index.php';</script>";
+  echo "<script>alert('Account created but could not log you in. Please login.'); window.location.href='login.html';</script>";
   exit;
 }
