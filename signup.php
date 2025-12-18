@@ -36,20 +36,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
   }
 
-  // fetch new user id
-  $st = $pdo->prepare("SELECT id FROM users WHERE email = ? LIMIT 1");
-  $st->execute([$email]);
-  $u = $st->fetch();
-  $userId = $u ? (int)$u['id'] : 0;
+  // get user id
+  $userId = (int)$pdo->lastInsertId();
 
   if ($userId > 0) {
-    $pdo->prepare("INSERT INTO game_stats(user_id, games_played, games_won, time_played)
+    $pdo->prepare("INSERT IGNORE INTO game_stats(user_id, games_played, games_won, time_played)
                    VALUES (?, 0, 0, 0)")->execute([$userId]);
 
     // send them to main menu
     $_SESSION['user_id'] = $userId;
-    $_SESSION['user'] = $u['email']; 
+    $_SESSION['user'] = $email; 
 
+    session_write_close();
     header("Location: index.php");
     exit;
   }
