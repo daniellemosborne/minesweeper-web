@@ -45,8 +45,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if ($userId > 0) {
     $pdo->prepare("INSERT INTO game_stats(user_id, games_played, games_won, time_played)
                    VALUES (?, 0, 0, 0)")->execute([$userId]);
+
+    // send them to main menu
+    $_SESSION['user_id'] = $userId;
+    $_SESSION['user'] = $u['email']; 
+
+    // account created successfully
+    echo "<script>alert('Account created successfully!'); window.location.href='index.php';</script>";
   }
 
-  echo "<script>alert('Account created successfully!'); window.location.href='signup.html';</script>";
+  echo "<script>alert('Account created but could not log you in. Please login.'); window.location.href='index.php';</script>";
   exit;
 }
