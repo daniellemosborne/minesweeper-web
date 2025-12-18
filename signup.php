@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $userId = (int)$pdo->lastInsertId();
 
   if ($userId > 0) {
-    $pdo->prepare("INSERT OR IGNORE INTO game_stats(user_id, games_played, games_won, time_played)
+    $pdo->prepare("INSERT INTO game_stats(user_id, games_played, games_won, time_played)
                    VALUES (?, 0, 0, 0)")->execute([$userId]);
 
     // send them to main menu
