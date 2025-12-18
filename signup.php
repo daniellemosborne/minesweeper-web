@@ -47,6 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                    VALUES (?, 0, 0, 0)")->execute([$userId]);
   }
 
-  echo "<script>alert('Account created successfully!'); window.location.href='index.php';</script>";
+  echo "<script>alert('Account created successfully!'); window.location.href='signup.html';</script>";
   exit;
 }
