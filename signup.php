@@ -9,16 +9,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $password  = $_POST['password'] ?? '';
   $confirm   = $_POST['cfrmpassword'] ?? '';
 
+ 
   if (!$firstName || !$lastName || !$email || !$password || !$confirm) {
-    echo "<script>alert('Please fill out all fields.'); window.location.href='signup.html';</script>";
+    header("Location: signup.html?error=missing_fields");
     exit;
   }
+
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo "<script>alert('Invalid email format.'); window.location.href='signup.html';</script>";
+    header("Location: signup.html?error=bad_email");
     exit;
   }
+
   if ($password !== $confirm) {
-    echo "<script>alert('Passwords do not match.'); window.location.href='signup.html';</script>";
+    header("Location: signup.html?error=password_mismatch");
     exit;
   }
 
@@ -26,13 +29,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $st = $pdo->prepare("SELECT 1 FROM users WHERE email = ? LIMIT 1");
   $st->execute([$email]);
   if ($st->fetch()) {
-    echo "<script>alert('This email is already registered.'); window.location.href='signup.html';</script>";
+    header("Location: signup.html?error=email_taken");
     exit;
   }
 
   // create user 
   if (!create_user($pdo, $firstName, $lastName, $email, $password)) {
-    echo "<script>alert('Could not create account. Try a different email.'); window.location.href='signup.html';</script>";
+    header("Location: signup.html?error=create_failed");
     exit;
   }
 
@@ -40,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $userId = (int)$pdo->lastInsertId();
 
   if ($userId > 0) {
-    $pdo->prepare("INSERT IGNORE INTO game_stats(user_id, games_played, games_won, time_played)
+    $pdo->prepare("INSERT OR IGNORE INTO game_stats(user_id, games_played, games_won, time_played)
                    VALUES (?, 0, 0, 0)")->execute([$userId]);
 
     // send them to main menu
@@ -51,7 +54,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: index.php");
     exit;
   }
-
-  echo "<script>alert('Account created but could not log you in. Please login.'); window.location.href='login.html';</script>";
+  
+  header("Location: login.html?error=login_required");
   exit;
 }
+
+header("Location: signup.html");
+exit;
+
+
