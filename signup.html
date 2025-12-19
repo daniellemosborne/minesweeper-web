@@ -12,6 +12,28 @@
         <div class="signup_form">
 
             <h1 class="signup_heading">Create Account</h1>
+
+            <p id="error-message" style="color: red; display: none; margin-top: 10px;"></p>
+
+            <script>
+                const params = new URLSearchParams(window.location.search);
+                const error = params.get("error");
+              
+                const messages = {
+                  email_taken: "That email is already in use.",
+                  missing_fields: "Please fill out all fields.",
+                  bad_email: "Please enter a valid email.",
+                  password_mismatch: "Passwords do not match.",
+                  create_failed: "Could not create account."
+                };
+              
+                if (error && messages[error]) {
+                  const el = document.getElementById("error-message");
+                  el.textContent = messages[error];
+                  el.style.display = "block";
+                  window.history.replaceState({}, document.title, window.location.pathname);
+                }
+            </script>
         
             <form class ="input_fields" action="signup.php" method="post" name="signupForm">
                 <!-- enter first name -->
