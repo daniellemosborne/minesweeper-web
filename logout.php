@@ -21,5 +21,5 @@ session_start();
 session_regenerate_id(true);
 
 // redirect to login page
-header("Location: login.html");
+header("Location: login.php");
 exit;
