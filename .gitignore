@@ -2,3 +2,6 @@
 vendor/
 node_modules/
 *.sqlite
+
+data/*.sqlite
+data/*.db
